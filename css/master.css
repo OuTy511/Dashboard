@@ -94,7 +94,7 @@ a {
 
 .sidebar ul li a.active,
 .sidebar ul li a:hover {
-    background-color: #f1f5f9;
+    background-color: #f6f6f6;
 }
 
 @media (max-width:767px) {
@@ -124,3 +124,43 @@ a {
 }
 
 /* End Sidebar */
+/* Start Header */
+.header .search::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--grey-color);
+}
+
+.header .search input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 30px;
+    width: 160px;
+    transition: width 0.3s;
+    outline: none;
+}
+
+.header .search input:focus {
+    width: 180px;
+}
+
+.header .search input::placeholder {
+    transition: 0.3s;
+}
+
+.header .search input:focus::placeholder {
+    opacity: 0;
+}
+
+.header .icons img {
+    width: 32px;
+}
+
+/* End Header */
