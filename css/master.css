@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -52,7 +56,6 @@ a {
 /* Start Sidebar */
 .sidebar {
     width: 250px;
-    height: 100vh;
     box-shadow: 0 0 10px #ddd;
 }
 
@@ -144,7 +147,6 @@ a {
     padding-left: 30px;
     width: 160px;
     transition: width 0.3s;
-    outline: none;
 }
 
 .header .search input:focus {
@@ -172,11 +174,12 @@ a {
 
 .header .icons img {
     width: 32px;
+    border-radius: 100%;
 }
 
 .main-title {
     position: relative;
-    padding: 0 0 15px 20px;
+    padding: 0 0 10px 20px;
     width: fit-content;
     cursor: default;
     font-weight: 700;
@@ -186,7 +189,7 @@ a {
 .main-title::after {
     content: '';
     position: absolute;
-    top: 100%;
+    bottom: 0;
     left: 20px;
     height: 3px;
     border-radius: 10px;
@@ -195,7 +198,7 @@ a {
 
 /* End Header */
 .main-title::before {
-    width: 160px;
+    width: 140px;
     background-color: #fff;
 }
 
@@ -205,7 +208,7 @@ a {
 }
 
 .main-title:hover::after {
-    width: 160px;
+    width: 150px;
 }
 
 .wrapper {
@@ -220,3 +223,159 @@ a {
         gap: 10px;
     }
 }
+
+/* Start Welcome Widget */
+.welcome {
+    overflow: hidden;
+}
+
+.welcome .text h2 {
+    margin: 0 0 5px 0;
+}
+
+.welcome .img img {
+    width: 200px;
+}
+
+.welcome>img {
+    width: 64px;
+    border: 4px solid #fff;
+    border-radius: 100%;
+    position: relative;
+    margin: -32px 0 0 10px;
+}
+
+@media (max-width:767px) {
+    .welcome>img {
+        margin: -32px 0 0 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.welcome .body {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.welcome .visit {
+    margin: 0 15px 15px auto;
+    transition: 0.3s;
+}
+
+.welcome .visit:hover {
+    background-color: var(--blue-alt-color);
+}
+
+/* End Welcome Widget */
+.wrapper>div:not(.welcome) {
+    padding: 20px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.wrapper>div>h2 {
+    margin: 0 0 5px 0;
+}
+
+.wrapper>div>span {
+    display: block;
+    color: var(--grey-color);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Start Quick Draft */
+.quick-draft textarea {
+    resize: none;
+    min-height: 180px;
+}
+
+.quick-draft .save {
+    cursor: pointer;
+    margin: 0 0 15px auto;
+    transition: 0.3s;
+}
+
+.quick-draft .save:hover {
+    background-color: var(--blue-alt-color);
+}
+
+/* End Quick Draft */
+/* Start Yearly Targets */
+.yearly-targets>div .icon {
+    min-width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+.yearly-targets>div.blue .icon,
+.yearly-targets>div.blue .progress {
+    background-color: rgb(0 117 255 / 20%);
+}
+
+.yearly-targets>div.orange .icon,
+.yearly-targets>div.orange .progress {
+    background-color: rgb(245 158 11 / 20%);
+}
+
+.yearly-targets>div.green .icon,
+.yearly-targets>div.green .progress {
+    background-color: rgb(34 197 94 / 20%);
+}
+
+.yearly-targets .details .progress {
+    height: 4px;
+}
+
+.yearly-targets .details .progress>span span {
+    position: absolute;
+    bottom: 16px;
+    right: -16px;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.yearly-targets .details .progress>span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.yearly-targets .details .progress>span span {
+    position: absolute;
+    bottom: 16px;
+    right: -16px;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.yearly-targets .details .progress>span span::after {
+    content: "";
+    border-color: transparent;
+    border-width: 5px;
+    border-style: solid;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.yearly-targets .details .progress>.blue span::after {
+    border-top-color: var(--blue-color);
+}
+
+.yearly-targets .details .progress>.orange span::after {
+    border-top-color: var(--orange-color);
+}
+
+.yearly-targets .details .progress>.green span::after {
+    border-top-color: var(--green-color);
+}
+
+/* End Yearly Targets */
